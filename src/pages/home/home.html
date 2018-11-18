@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add Person</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navigateToAddPersonPage()">
+        <!--<ion-icon name="add"></ion-icon>-->Add
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <!--
+  <ion-item>
+    <ion-input [(ngModel)]="myInput"></ion-input>
+  </ion-item>
+  <button ion-button (click)="btnAddPerson()">Add Person</button>
+  -->
+  <ion-item>
+    <p>List of persons</p>
+    <ion-list>
+      <ion-item *ngFor="let person of arrData | async; let i of index" (click)
+      ="selectPerson(i)">
+        {{person}}
+      </ion-item>
+    </ion-list>
+  </ion-item>
+</ion-content>
